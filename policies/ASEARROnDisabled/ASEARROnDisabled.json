@@ -1,0 +1,21 @@
+{
+    "policyRule": {
+        "if": {
+          "allOf": [
+            {
+              "field": "type",
+              "equals": "Microsoft.Web/sites"
+            },
+            {
+              "not": {
+                "field": "Microsoft.Web/sites/clientAffinityEnabled",
+                "equals": "true"
+              }
+            }
+          ]
+        },
+        "then": {
+          "effect": "deny"
+        }
+      }
+}
