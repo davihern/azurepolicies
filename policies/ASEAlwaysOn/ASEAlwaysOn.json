@@ -1,27 +1,38 @@
 {
-    "policyRule": {
-        "if": {
-          "allOf": [
-            {
-              "field": "type",
-              "equals": "Microsoft.Web/sites"
-            },
-            {
-              "anyOf": [
-                {
-                  "field": "Microsoft.Web/sites/siteConfig.alwaysOn",
-                  "notEquals": "on"
-                },
-                {
-                  "field": "Microsoft.Web/sites/siteConfig.alwaysOn",
-                  "exists": "false"
-                }
-              ]
-            }
-          ]
+    "properties": {
+        "displayName": "Audit ASE settings to ensure AlwaysOn is enabled.",
+        "policyType": "Custom",
+        "description": "This policy ensures ASE has AlwaysOn enabled.",
+        "mode": "Indexed",
+        "metadata": {
+            "category": "resiliency",
+            "company": "BankName"
         },
-        "then": {
-          "effect": "audit"
+        "parameters": {},
+        "policyRule": {
+            "if": {
+                "allOf": [
+                    {
+                        "field": "type",
+                        "equals": "Microsoft.Web/sites"
+                    },
+                    {
+                        "anyOf": [
+                            {
+                                "field": "Microsoft.Web/sites/siteConfig.alwaysOn",
+                                "notEquals": "on"
+                            },
+                            {
+                                "field": "Microsoft.Web/sites/siteConfig.alwaysOn",
+                                "exists": "false"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "then": {
+                "effect": "audit"
+            }
         }
-      }
+    }
 }

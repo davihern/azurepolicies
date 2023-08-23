@@ -1,21 +1,32 @@
 {
-    "policyRule": {
-        "if": {
-          "allOf": [
-            {
-              "field": "type",
-              "equals": "Microsoft.Web/sites"
-            },
-            {
-              "not": {
-                "field": "Microsoft.Web/sites/clientAffinityEnabled",
-                "equals": "true"
-              }
-            }
-          ]
+    "properties": {
+        "displayName": "Audit ASE in order to detect that ARR should be disabled.",
+        "policyType": "Custom",
+        "description": "This policy ensures ASE has ARROn in disabled state.",
+        "mode": "Indexed",
+        "metadata": {
+            "category": "resiliency",
+            "company": "BankName"
         },
-        "then": {
-          "effect": "deny"
+        "parameters": {},
+        "policyRule": {
+            "if": {
+                "allOf": [
+                    {
+                        "field": "type",
+                        "equals": "Microsoft.Web/sites"
+                    },
+                    {
+                        "not": {
+                            "field": "Microsoft.Web/sites/clientAffinityEnabled",
+                            "equals": "true"
+                        }
+                    }
+                ]
+            },
+            "then": {
+                "effect": "deny"
+            }
         }
-      }
+    }
 }

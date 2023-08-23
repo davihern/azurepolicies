@@ -1,0 +1,12 @@
+
+    [
+        {
+            "policyDefinitionId": "/subscriptions/baa4dc2a-a455-43f3-91f2-5d9e98cff3e2/providers/Microsoft.Authorization/policyDefinitions/ASEAlwaysOn"
+        },
+        {
+            "policyDefinitionId": "/subscriptions/baa4dc2a-a455-43f3-91f2-5d9e98cff3e2/providers/Microsoft.Authorization/policyDefinitions/ASEARROnDisabled"
+        },
+        {
+            "policyDefinitionId": "/subscriptions/baa4dc2a-a455-43f3-91f2-5d9e98cff3e2/providers/Microsoft.Authorization/policyDefinitions/storageminTLS"
+        }
+    ]
