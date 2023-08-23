@@ -7,8 +7,6 @@ This policy audits Storage Accounts to check on TLS version
 
 ````powershell
 $definition = New-AzPolicyDefinition -Name "storageminTLS" -Policy 'storageminTLS.json'
-$definition
-$assignment = New-AzPolicyAssignment -Name <assignmentname> -Scope <scope> -PolicyDefinition $definition
-$assignment
+
 ````
 
