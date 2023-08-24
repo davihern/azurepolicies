@@ -1,0 +1,30 @@
+{
+    "properties": {
+        "displayName": "AppService 64 bit",
+        "policyType": "Custom",
+        "mode": "All",
+        "description": "Audit that App Services have 64 configured for resiliency and performance",
+        "metadata": {
+           "category": "resiliency",
+           "company": "BankName"
+        },
+        "parameters": {},
+        "policyRule": {
+            "if": {
+                "allOf": [
+                    {
+                        "field": "type",
+                        "equals": "Microsoft.Web/sites"
+                    },
+                    {
+                        "field": "Microsoft.Web/sites/siteConfig.use32BitWorkerProcess",
+                        "equals": "true"
+                    }
+                ]
+            },
+            "then": {
+                "effect": "audit"
+            }
+        }
+    }
+}

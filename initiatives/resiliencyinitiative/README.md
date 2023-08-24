@@ -20,3 +20,25 @@ Remove-Item $policydefinitionsreplaced
 New-AzPolicyAssignment -PolicySetDefinition $policyset -Name "resiliencycheckassignment" -Scope "/subscriptions/$($SubId)"  
 ````
 
+## retrieve audit alerts
+
+````powershell
+
+Start-AzPolicyComplianceScan
+
+# Install from PowerShell Gallery via PowerShellGet
+Install-Module -Name Az.PolicyInsights
+
+# Import the downloaded module
+Import-Module Az.PolicyInsights
+
+Get-AzPolicyStateSummary -Top 1
+
+# get only alerts from this specific policy set
+Get-AzPolicyState -Filter "PolicySetDefinitionCategory eq 'resiliency'"
+
+#summary table format
+Get-AzPolicyState -Filter "PolicySetDefinitionCategory eq 'resiliency'" | Format-Table -AutoSize -Property PolicyDefinitionName,ResourceGroup,ResourceId -Wrap
+
+
+````

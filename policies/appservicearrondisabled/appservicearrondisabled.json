@@ -1,8 +1,8 @@
 {
     "properties": {
-        "displayName": "Audit ASE in order to detect that ARR should be disabled.",
+        "displayName": "Audit App Service in order to detect that ARR should be disabled.",
         "policyType": "Custom",
-        "description": "This policy ensures ASE has ARROn in disabled state.",
+        "description": "This policy ensures App Service has ARROn in disabled state.",
         "mode": "Indexed",
         "metadata": {
             "category": "resiliency",
@@ -25,7 +25,7 @@
                 ]
             },
             "then": {
-                "effect": "deny"
+                "effect": "audit"
             }
         }
     }

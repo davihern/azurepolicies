@@ -9,6 +9,9 @@
         "policyDefinitionId": "/subscriptions/<<SUBSCRIPTION_ID>>/providers/Microsoft.Authorization/policyDefinitions/storageminTLS"
     },
     {
+        "policyDefinitionId": "/subscriptions/<<SUBSCRIPTION_ID>>/providers/Microsoft.Authorization/policyDefinitions/appservice64bits"
+    },
+    {
         "policyDefinitionReferenceId":"WebApps httpSOnly", 
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a4af4a39-4135-47fb-b175-47fbdf85311d"
     },
