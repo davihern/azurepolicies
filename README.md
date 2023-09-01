@@ -2,6 +2,14 @@
 
 Specify group of policies to ensure resiliency
 
+
+Before executing these policies in Powershell ensure that you are in the correct Azure subscription:
+
+````
+Connect-AzAccount
+Set-AzContext -Subscription "<<SUBSCRIPTION_ID>>"
+````
+
 ## Try with PowerShell
 
 ````powershell
