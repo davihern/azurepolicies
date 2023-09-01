@@ -1,0 +1,2 @@
+#summary table format
+Get-AzPolicyState -Filter "PolicySetDefinitionCategory eq 'resiliency'" | Format-Table -AutoSize -Property PolicyDefinitionName,PolicyDefinitionReferenceId,ResourceGroup,ResourceId -Wrap

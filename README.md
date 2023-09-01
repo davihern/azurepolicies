@@ -11,6 +11,7 @@ $definition = New-AzPolicyDefinition -Name "storageminTLS" -Policy "./policies/s
 $definition = New-AzPolicyDefinition -Name "appservice64bits" -Policy './policies/appservice64bits/appservice64bits.json'
 $definition = New-AzPolicyDefinition -Name "appservicealwayson" -Policy './policies/appservicealwayson/appservicealwayson.json'
 $definition = New-AzPolicyDefinition -Name "appservicearrondisabled" -Policy './policies/appservicearrondisabled/appservicearrondisabled.json'
+$definition = New-AzPolicyDefinition -Name "appservicearrondisabled" -Policy './policies/appservicehealthcheck/appservicehealthcheck.json'
 
 
 
