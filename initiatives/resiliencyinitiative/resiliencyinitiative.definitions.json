@@ -1,15 +1,15 @@
 [
     {
-        "policyDefinitionId": "/subscriptions/<<SUBSCRIPTION_ID>>/providers/Microsoft.Authorization/policyDefinitions/ASEAlwaysOn"
-    },
-    {
-        "policyDefinitionId": "/subscriptions/<<SUBSCRIPTION_ID>>/providers/Microsoft.Authorization/policyDefinitions/ASEARROnDisabled"
-    },
-    {
-        "policyDefinitionId": "/subscriptions/<<SUBSCRIPTION_ID>>/providers/Microsoft.Authorization/policyDefinitions/storageminTLS"
-    },
-    {
         "policyDefinitionId": "/subscriptions/<<SUBSCRIPTION_ID>>/providers/Microsoft.Authorization/policyDefinitions/appservice64bits"
+    },
+    {
+        "policyDefinitionId": "/subscriptions/<<SUBSCRIPTION_ID>>/providers/Microsoft.Authorization/policyDefinitions/appservicealwayson"
+    },
+    {
+        "policyDefinitionId": "/subscriptions/<<SUBSCRIPTION_ID>>/providers/Microsoft.Authorization/policyDefinitions/appservicearrondisabled"
+    },
+    {
+        "policyDefinitionId": "/subscriptions/<<SUBSCRIPTION_ID>>/providers/Microsoft.Authorization/policyDefinitions/appservicehealthcheck"
     },
     {
         "policyDefinitionReferenceId":"WebApps httpSOnly", 
@@ -54,5 +54,9 @@
     {
         "policyDefinitionReferenceId":"AppService Slots TLS", 
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4ee5b817-627a-435a-8932-116193268172"
+    },
+    {
+        "policyDefinitionReferenceId":"Storage accounts should have the specified minimum TLS version", 
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/fe83a0eb-a853-422d-aac2-1bffd182c5d0"
     }
 ]

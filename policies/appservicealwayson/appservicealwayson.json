@@ -1,8 +1,8 @@
 {
     "properties": {
-        "displayName": "Audit ASE settings to ensure AlwaysOn is enabled.",
+        "displayName": "Audit app service settings to ensure AlwaysOn is enabled.",
         "policyType": "Custom",
-        "description": "This policy ensures ASE has AlwaysOn enabled.",
+        "description": "This policy ensures app service has AlwaysOn enabled.",
         "mode": "Indexed",
         "metadata": {
             "category": "resiliency",

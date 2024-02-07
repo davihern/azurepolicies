@@ -15,11 +15,10 @@ Set-AzContext -Subscription "<<SUBSCRIPTION_ID>>"
 ````powershell
 #register custom policies
 
-$definition = New-AzPolicyDefinition -Name "storageminTLS" -Policy "./policies/storageminTLS/storageminTLS.json"
-$definition = New-AzPolicyDefinition -Name "appservice64bits" -Policy './policies/appservice64bits/appservice64bits.json'
-$definition = New-AzPolicyDefinition -Name "appservicealwayson" -Policy './policies/appservicealwayson/appservicealwayson.json'
-$definition = New-AzPolicyDefinition -Name "appservicearrondisabled" -Policy './policies/appservicearrondisabled/appservicearrondisabled.json'
-$definition = New-AzPolicyDefinition -Name "appservicearrondisabled" -Policy './policies/appservicehealthcheck/appservicehealthcheck.json'
+New-AzPolicyDefinition -Name "appservice64bits" -Policy './policies/appservice64bits/appservice64bits.json'
+New-AzPolicyDefinition -Name "appservicealwayson" -Policy './policies/appservicealwayson/appservicealwayson.json'
+New-AzPolicyDefinition -Name "appservicearrondisabled" -Policy './policies/appservicearrondisabled/appservicearrondisabled.json'
+New-AzPolicyDefinition -Name "appservicehealthcheck" -Policy './policies/appservicehealthcheck/appservicehealthcheck.json'
 
 
 
@@ -34,6 +33,7 @@ $SubId = (Get-AzContext).Subscription.id
 
 $policyset= New-AzPolicySetDefinition -Name "resiliencychecks" -DisplayName "Resiliency checks" -Metadata '{"category":"resiliency"}' -PolicyDefinition $policydefinitionsreplaced
 
+#remove the generated file, to keep code clean and to ensure script is idempotent
 Remove-Item $policydefinitionsreplaced
 
 New-AzPolicyAssignment -PolicySetDefinition $policyset -Name "resiliencycheckassignment" -Scope "/subscriptions/$($SubId)"  
