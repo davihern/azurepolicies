@@ -20,7 +20,7 @@
                         "anyOf": [
                             {
                                 "field": "Microsoft.Web/sites/siteConfig.alwaysOn",
-                                "notEquals": "on"
+                                "notEquals": "true"
                             },
                             {
                                 "field": "Microsoft.Web/sites/siteConfig.alwaysOn",
