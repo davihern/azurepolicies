@@ -13,6 +13,13 @@ foreach ($webApp in $webApps) {
     # if $webApp.Kind equals to "app" then it is a web app, otherwise it is a function app
     if ($webApp.Kind -eq "app") {
 
+        $HealthCheckPath = $webApp.SiteConfig.HealthCheckPath
+        $ExpectedHealthCheckPath = "/healthCheck" 
+        # if $HealthCheckPath is not equal to "ExpectedHealthCheckPath" then add an item to $myitems array
+        if (!$ExpectedHealthCheckPath.Equals($HealthCheckPath)) {
+            $myitems += [pscustomobject]@{PolicyDefinitionName="Wrong HealthCheckPath";ResourceGroup=$webApp.ResourceGroup;ResourceId=$webApp.Name;Comment="HealthCheckPath should be $ExpectedHealthCheckPath"}
+        }
+
         $appSettings = $webApp.SiteConfig.AppSettings
         $myVar = $appSettings | Where-Object { $_.Name -like "WEBSITE_LOCAL_CACHE_OPTION" }    
         

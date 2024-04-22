@@ -3,44 +3,35 @@
         "displayName": "Audit App Service in order to detect that Health check must be enabled.",
         "policyType": "Custom",
         "description": "This policy ensures App Service has health check enabled.",
-        "mode": "Indexed",
+        "mode": "All",
         "metadata": {
             "category": "resiliency",
             "company": "BankName"
         },
         "parameters": {},
         "policyRule": {
-            "if": {
-              "anyOf": [
+          "if": {
+              "field": "type",
+              "equals": "Microsoft.Web/sites"
+          },
+          "then": {
+         "effect": "auditIfNotExists",
+          "details": {
+            "type": "Microsoft.Web/sites/config",
+            "existenceCondition": {
+              "allOf": [
                 {
-                  "allOf": [
-                    {
-                      "field": "type",
-                      "equals": "Microsoft.Web/sites"
-                    },
-                    {
-                      "field": "Microsoft.Web/sites/siteConfig.healthCheckPath",
-                      "exists": "false"
-                    }
-                  ]
+                  "field": "Microsoft.Web/sites/config/healthCheckPath",
+                  "exists": "true"
                 },
                 {
-                  "allOf": [
-                    {
-                      "field": "type",
-                      "equals": "Microsoft.Web/sites"
-                    },
-                    {
-                      "field": "Microsoft.Web/sites/siteConfig.healthCheckPath",
-                      "like": ""
-                    }
-                  ]
+                  "field": "Microsoft.Web/sites/config/healthCheckPath",
+                  "equals": "/myhealthpath.aspx"
                 }
               ]
-            },
-            "then": {
-              "effect": "audit"
-            }
+                  }
+              }
           }
+      }
     }
 }
