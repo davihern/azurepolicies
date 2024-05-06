@@ -17,10 +17,8 @@
                         "equals": "Microsoft.Web/sites"
                     },
                     {
-                        "not": {
-                            "field": "Microsoft.Web/sites/clientAffinityEnabled",
-                            "equals": "true"
-                        }
+                        "field": "Microsoft.Web/sites/clientAffinityEnabled",
+                        "equals": "true"
                     }
                 ]
             },
